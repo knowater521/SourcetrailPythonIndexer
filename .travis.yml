@@ -44,6 +44,9 @@ install:
   - python3 --version
   - which pip
   - which pip3
+  - pip --version
+  - pip3 --version
+  - sudo which pip3
   - pip3 install -r requirements.txt
   - sudo pip3 install -r requirements.txt
 

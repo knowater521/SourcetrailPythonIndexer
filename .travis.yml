@@ -28,7 +28,7 @@ before_install:
       HOMEBREW_NO_AUTO_UPDATE=1 brew install swig
       brew link --force swig
     elif [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      sudo add-apt-repository ppa:deadsnakes/ppa
+      sudo add-apt-repository --assume-yes ppa:deadsnakes/ppa
       sudo apt-get --assume-yes update
     fi
 

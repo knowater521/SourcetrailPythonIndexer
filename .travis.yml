@@ -29,7 +29,7 @@ before_install:
       brew link --force swig
     elif [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       sudo add-apt-repository ppa:deadsnakes/ppa
-      sudo apt-get update
+      sudo apt-get --assume-yes update
     fi
 
 

@@ -61,6 +61,9 @@ install:
   - if [[ "${CC_COMPILER}" != "" ]]; then export CC=${CC_COMPILER}; export CC_FOR_BUILD=${CC_COMPILER}; fi
   - which python3
   - python3 --version
+  - which pip
+  - which pip3
+  - pip3 install -r requirements.txt
   - sudo pip3 install -r requirements.txt
 
 

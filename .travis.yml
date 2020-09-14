@@ -45,6 +45,7 @@ install:
   - which pip
   - which pip3
   - pip --version
+  - pyenv global 3.6.3
   - pip3 --version
   - sudo which pip3
   - pip3 install -r requirements.txt

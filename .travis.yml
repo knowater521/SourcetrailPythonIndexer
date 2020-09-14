@@ -28,7 +28,6 @@ before_install:
       HOMEBREW_NO_AUTO_UPDATE=1 brew install swig
       brew link --force swig
     elif [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      cat /etc/issue
 
       cd ~
       mkdir tmp
@@ -54,6 +53,8 @@ before_install:
 install:
   - if [[ "${CXX_COMPILER}" != "" ]]; then export CXX=${CXX_COMPILER}; export CXX_FOR_BUILD=${CXX_COMPILER}; fi
   - if [[ "${CC_COMPILER}" != "" ]]; then export CC=${CC_COMPILER}; export CC_FOR_BUILD=${CC_COMPILER}; fi
+  - which python3
+  - python3 --version
   - sudo pip3 install -r requirements.txt
 
 

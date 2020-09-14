@@ -14,7 +14,7 @@ matrix:
           packages:
             - g++-5
       env:
-        - CC_COMPILER=gcc-5 CXX_COMPILER=g++-5 PYTHON=3.4
+        - CC_COMPILER=gcc-5 CXX_COMPILER=g++-5 PYTHON=3.6
 
     - os: osx
       compiler: clang
@@ -30,8 +30,6 @@ before_install:
     elif [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       sudo add-apt-repository ppa:deadsnakes/ppa
       sudo apt-get update
-      sudo apt-get --assume-yes install python3.6
-      sudo apt-get install -qq swig
     fi
 
 

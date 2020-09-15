@@ -63,7 +63,9 @@ install:
   - which python3
   - python3 --version
 
-  - cd /home/travis/opt/python-3.6.12
+  - cd /home/travis/opt/python-3.6.12/include
+  - ls -la
+  - cd /home/travis/opt/python-3.6.12/lib
   - ls -la
   - cd /home/travis/build/CoatiSoftware/SourcetrailPythonIndexer
 
@@ -82,7 +84,7 @@ script:
   - cd SourcetrailDB
   - mkdir build
   - cd build
-  - cmake -DBUILD_BINDINGS_PYTHON=1 -DPYTHON_VERSION=$PYTHON ..
+  - cmake -DBUILD_BINDINGS_PYTHON=1 -DPYTHON_VERSION=$PYTHON -DPYTHON_INCLUDE_DIRS=/home/travis/opt/python-3.6.12/include -PYTHON_LIBRARIES=/home/travis/opt/python-3.6.12/lib ..
   - make
   - cd ../..
   - cp SourcetrailDB/build/bindings_python/sourcetraildb.py .

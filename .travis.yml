@@ -64,10 +64,10 @@ install:
 
   - cd /home/travis/opt/python-3.6.12/include
   - ls -la
-  - cd /home/travis/opt/python-3.6.12/lib/python3.6
+  - cd /home/travis/opt/python-3.6.12/lib
   - ls -la
   - cd /home/travis/build/CoatiSoftware/SourcetrailPythonIndexer
-  
+
   - python3 --version
 
   - which pip3

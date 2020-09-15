@@ -30,27 +30,10 @@ before_install:
     elif [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       pwd
 
-      cd ~
-      mkdir tmp
-      cd tmp
-      wget https://www.python.org/ftp/python/3.6.12/Python-3.6.12.tgz
-      tar zxvf Python-3.6.12.tgz 
-      cd Python-3.6.12
-      ./configure --prefix=$HOME/opt/python-3.6.12 --enable-shared
-      make
-      make install
-      cd ~
-      export PATH=$HOME/opt/python-3.6.12/bin:$PATH
       which python3
       python3 --version
-      cd tmp
-      wget https://bootstrap.pypa.io/get-pip.py
-      python3 get-pip.py
-      cd ~
-      which pip
-      which pip3
-      cd /home/travis/build/CoatiSoftware/SourcetrailPythonIndexer
-      pwd
+      sudo which python3
+      sudo python3 --version
 
       sudo apt-get update
       sudo apt-get install -qq swig

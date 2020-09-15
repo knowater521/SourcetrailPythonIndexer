@@ -36,7 +36,7 @@ before_install:
       wget https://www.python.org/ftp/python/3.6.12/Python-3.6.12.tgz
       tar zxvf Python-3.6.12.tgz 
       cd Python-3.6.12
-      ./configure --prefix=$HOME/opt/python-3.6.12 --enable-shared LDFLAGS="-Wl,-rpath $HOME/opt/python-3.6.12/lib"
+      ./configure --prefix=$HOME/opt/python-3.6.12 --enable-shared
       make
       make install
       cd ~
@@ -61,13 +61,14 @@ install:
   - if [[ "${CXX_COMPILER}" != "" ]]; then export CXX=${CXX_COMPILER}; export CXX_FOR_BUILD=${CXX_COMPILER}; fi
   - if [[ "${CC_COMPILER}" != "" ]]; then export CC=${CC_COMPILER}; export CC_FOR_BUILD=${CC_COMPILER}; fi
   - which python3
-  - python3 --version
 
   - cd /home/travis/opt/python-3.6.12/include
   - ls -la
   - cd /home/travis/opt/python-3.6.12/lib/python3.6
   - ls -la
   - cd /home/travis/build/CoatiSoftware/SourcetrailPythonIndexer
+  
+  - python3 --version
 
   - which pip3
   - pip3 --version

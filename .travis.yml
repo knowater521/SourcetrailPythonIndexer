@@ -84,7 +84,7 @@ script:
   - cd SourcetrailDB
   - mkdir build
   - cd build
-  - cmake -DBUILD_BINDINGS_PYTHON=1 -DPYTHON_VERSION=$PYTHON -DPYTHON_INCLUDE_DIRS="/home/travis/opt/python-3.6.12/include" -PYTHON_LIBRARIES="/home/travis/opt/python-3.6.12/lib" ..
+  - cmake -DBUILD_BINDINGS_PYTHON=1 -DPYTHON_VERSION=$PYTHON -DPYTHON_INCLUDE_DIRS=/home/travis/opt/python-3.6.12/include -DPYTHON_LIBRARIES=/home/travis/opt/python-3.6.12/lib ..
   - make
   - cd ../..
   - cp SourcetrailDB/build/bindings_python/sourcetraildb.py .
